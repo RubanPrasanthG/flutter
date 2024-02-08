@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copy Content with AppBar</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      padding-top: 4rem; /* Adjust according to the height of the app bar */
+    }
+    /* Hide visually but keep accessible for copying */
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      border: 0 !important;
+    }
+  </style>
+</head>
+<body>
+  <!-- App bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Flutter App</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Passkey</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Test</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Reset</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Content to be copied -->
+  <div id="contentToCopy" class="visually-hidden">
+    <h1>Welcome to My App</h1>
+    <p>
+	1. Story Board
+--------------------
+import 'package:flutter/material.dart';
+
+void main() => runApp(const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(title: const Text("STORY BOARD")),
+        body: Center(
+          child: Container(
+            color: Colors.green,
+            width: 300,
+            height: 600,
+            child: const Text(
+              "HI YOU SUCCESSFULLY CREATED YOUR FIRST FLUTTER PROJECT,FLUTTER IS AN AWESOME FRAME FOR CROSS PLATFORM DEVELOPMENT",
+            ),
+          ),
+        ),
+      ),
+    ));
+
+
+2. Create program to detect and respond to user actions with Actions and Smilies.
+---------------------
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(home: SmileyDetector()));
+
+class SmileyDetector extends StatefulWidget {
+  @override
+  _SmileyDetectorState createState() => _SmileyDetectorState();
+}
+
+class _SmileyDetectorState extends State<SmileyDetector> {
+  String action = '';
+  Map<String, String> smilies = {
+    'happy': '😊',
+    'sad': '😢',
+    'excited': '😃',
+    'angry': '😠',
+    'surprised': '😮'
+  };
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(title: Text('Smiley Detector')),
+    body: Padding(
+      padding: EdgeInsets.all(20.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          TextField(
+            onChanged: (value) => setState(() => action = value.toLowerCase()),
+            decoration: InputDecoration(labelText: 'Enter your action (e.g., happy, sad)'),
+          ),
+          SizedBox(height: 20.0),
+          Text(
+            'You are $action ${smilies[action]}',
+            style: TextStyle(fontSize: 20.0),
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
+    ),
+  );
+}
+
+
+3. Create program to perform decision Making with Conditionally Smiley
+
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+  @override
+  _MyHomeState createState() => _MyHomeState();
+}
+
+class _MyHomeState extends State<MyApp> {
+  String enteredText = '';
+  String imageUrl = '';
+  final Map<String, String> imageUrls = {
+    'HI': 'https://media.istockphoto.com/id/1139862205/vector/hand-wave-waving-hi-or-hello-gesture-line-art-vector-icon-for-apps-and-websites.jpg?s=612x612&w=0&k=20&c=JXTEmZEU6Ui0jGM6e49G0alp_2uSCGnl_SXFu-BKsEg=',
+    'LAUGH': 'https://media.istockphoto.com/id/1171405497/vector/kids-children-laughing-together-vector.jpg?s=612x612&w=0&k=20&c=8YvBmmh2Nbu0PP_0jpW2I8U17MsaaqyVziYZKDNdy9w=',
+    'COOL': 'https://png.pngtree.com/thumb_back/fw800/background/20220505/pngtree-yellow-emoji-with-sunglasses-exuding-cool-and-happiness-photo-image_30258640.jpg',
+  };
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("DECISION MAKING")),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: "Type HI, LAUGH, or COOL",
+                ),
+                onChanged: (value) => setState(() {
+                  enteredText = value.toUpperCase();
+                  imageUrl = imageUrls[enteredText] ?? '';
+                }),
+              ),
+              ElevatedButton(
+                onPressed: () => setState(() {}),
+                child: Text("Change"),
+              ),
+              imageUrl.isNotEmpty
+                  ? SizedBox(
+                      height: 200, width: 200,
+                      child: Image.network(imageUrl, fit: BoxFit.cover),
+                    )
+                  : Text('No image selected'),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+4. Develop multi-view applications to Convert Celsius to Fahrenheit using the storyboard
+-----------------
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(home: CelsiusToFahrenheit()));
+
+class CelsiusToFahrenheit extends StatefulWidget {
+  @override
+  _CelsiusToFahrenheitState createState() => _CelsiusToFahrenheitState();
+}
+
+class _CelsiusToFahrenheitState extends State<CelsiusToFahrenheit> {
+  final TextEditingController _controller = TextEditingController();
+  String _result = '';
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(title: Text("CELSIUS TO FAHRENHEIT")),
+    body: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          TextField(
+            controller: _controller,
+            keyboardType: TextInputType.number,
+            decoration: InputDecoration(labelText: "ENTER THE CELSIUS"),
+          ),
+          ElevatedButton(
+            onPressed: () => setState(() => _result = (_celsius * 1.8 + 32).toStringAsFixed(2)),
+            child: Text("Convert"),
+          ),
+          Text("$_result Fahrenheit"),
+        ],
+      ),
+    ),
+  );
+
+  double get _celsius => double.tryParse(_controller.text) ?? 0;
+}
+
+
+5. Create program to passing data between views
+----------------------
+import 'package:flutter/material.dart';
+void main() => runApp(MaterialApp(
+  title: 'Flutter',
+  home: FirstScreen(),
+));
+class FirstScreen extends StatelessWidget {
+  final controller = TextEditingController();
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(title: Text('First screen')),
+    body: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Padding(
+          padding: EdgeInsets.all(32.0),
+          child: TextField(
+            controller: controller,
+            style: TextStyle(fontSize: 24),
+          ),
+        ),
+        ElevatedButton(
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => SecondScreen(text: controller.text)),
+          ),
+          child: Text('Go to second screen', style: TextStyle(fontSize: 24)),
+        ),
+      ],
+    ),
+  );
+}
+class SecondScreen extends StatelessWidget {
+  final String text;
+  SecondScreen({required this.text});
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(title: Text('Second screen')),
+    body: Center(child: Text(text, style: TextStyle(fontSize: 24))),
+  );
+}
+
+
+6. Create a game to perform to Animation, Drawing, and Controllers with flutter
+---------------------
+import 'package:flutter/material.dart';
+void main() => runApp(MaterialApp(home: GameScreen()));
+class GameScreen extends StatefulWidget {
+  @override
+  _GameScreenState createState() => _GameScreenState();
+}
+class _GameScreenState extends State<GameScreen> with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 2),
+    )..repeat(reverse: true);
+  }
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(title: Text('Flutter Game')),
+    body: AnimatedBuilder(
+      animation: _controller,
+      builder: (context, child) => CustomPaint(
+        painter: _MyPainter(_controller.value),
+        child: Container(),
+      ),
+    ),
+  );
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+}
+class _MyPainter extends CustomPainter {
+  final double radius;
+  _MyPainter(this.radius);
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..color = Colors.blue;
+    canvas.drawCircle(Offset(size.width / 2, radius * size.height), 20.0, paint);
+  }
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+}
+
+7. Addressbook
+------------------------
+import 'package:flutter/material.dart';
+
+void main() => runApp(AddressBookApp());
+
+class AddressBookApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Address Book',
+      home: AddressBookScreen(),
+    );
+  }
+}
+
+class AddressBookScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Address Book')),
+      body: Table(
+        defaultColumnWidth: FixedColumnWidth(120.0),
+        border: TableBorder.all(color: Colors.black, width: 2),
+        children: [
+          _buildTableRow(['Houseno', 'Area', 'District', 'State', 'Pincode']),
+          _buildTableRow(['1', '2nd streat ganapathy', 'Coimbatore', 'Tamilnadu', '641002']),
+          _buildTableRow(['2', '3rd streat gandhipurum', 'Coimbatore', 'Tamilnadu', '641008']),
+          _buildTableRow(['5', '5th streat saravanampatti', 'Coimbatore', 'Tamilnadu', '641005']),
+        ],
+      ),
+    );
+  }
+
+  TableRow _buildTableRow(List<String> data) {
+    return TableRow(
+      children: data.map((item) => Padding(
+        padding: EdgeInsets.all(8.0),
+        child: Text(item, style: TextStyle(fontSize: 20.0)),
+      )).toList(),
+    );
+  }
+}
+
+
+8. Develop a program to perform Finger Painting Application
+-----------------------------
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(home: Scaffold(body: PaintingScreen())));
+
+class PaintingScreen extends StatefulWidget {
+  @override
+  _PaintingScreenState createState() => _PaintingScreenState();
+}
+
+class _PaintingScreenState extends State<PaintingScreen> {
+  final List<Offset?> _points = [];
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(title: Text('Painting App')),
+    body: GestureDetector(
+      onPanUpdate: (details) => setState(() => _points.add(details.localPosition)),
+      onPanEnd: (_) => _points.add(null),
+      child: CustomPaint(
+        painter: _PaintingPainter(_points),
+        size: Size.infinite,
+      ),
+    ),
+    floatingActionButton: FloatingActionButton(
+      onPressed: () => setState(() => _points.clear()),
+      child: Icon(Icons.clear),
+    ),
+  );
+}
+
+class _PaintingPainter extends CustomPainter {
+  final List<Offset?> _points;
+
+  _PaintingPainter(this._points);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..color = Colors.black..strokeCap = StrokeCap.round..strokeWidth = 5.0;
+
+    for (int i = 0; i < _points.length - 1; i++) {
+      if (_points[i] != null && _points[i + 1] != null) {
+        canvas.drawLine(_points[i]!, _points[i + 1]!, paint);
+      }
+    }
+  }
+
+  @override
+  bool shouldRepaint(_PaintingPainter oldDelegate) => true;
+}
+
+
+9. Create Gestures to enable a secret handshake lock for your app
+-----------------------
+import 'package:flutter/material.dart';
+
+void main() => runApp(MaterialApp(home: SecretHandshakeLockScreen()));
+
+class SecretHandshakeLockScreen extends StatefulWidget {
+  @override
+  _SecretHandshakeLockScreenState createState() =>
+      _SecretHandshakeLockScreenState();
+}
+
+class _SecretHandshakeLockScreenState
+    extends State<SecretHandshakeLockScreen> {
+  final List<Offset> _points = [];
+  bool _isDragging = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Secret Handshake Lock')),
+      body: GestureDetector(
+        onPanStart: (_) => setState(() => _isDragging = true),
+        onPanUpdate: (details) => setState(() => _points.add(details.localPosition)),
+        onPanEnd: (_) {
+          setState(() {
+            if (_points.length >= 2) _authenticate();
+            _isDragging = false;
+            _points.clear();
+          });
+        },
+        child: CustomPaint(
+          painter: SecretHandshakePainter(_points),
+          child: Container(),
+        ),
+      ),
+    );
+  }
+
+  void _authenticate() {
+    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => AuthenticatedScreen()));
+  }
+}
+
+class SecretHandshakePainter extends CustomPainter {
+  final List<Offset> points;
+  SecretHandshakePainter(this.points);
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..color = Colors.blue..strokeCap = StrokeCap.round..strokeWidth = 5.0;
+    for (int i = 0; i < points.length - 1; i++) {
+      if (points[i] != null && points[i + 1] != null) {
+        canvas.drawLine(points[i], points[i + 1], paint);
+      }
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+}
+
+class AuthenticatedScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('Authenticated')),
+      body: Center(child: Text('Authentication Successful!')),
+    );
+  }
+}
+
+
+10. Create a program to perform Fun with the Accelerometer
+------------------
+
+
+yaml
+--
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_sensors: ^1.0.1
+
+main.dart..
+import 'package:flutter/material.dart';
+import 'package:flutter_sensors/flutter_sensors.dart';
+void main() {
+  runApp(AccelerometerApp());
+}
+class AccelerometerApp extends StatefulWidget {
+  @override
+  _AccelerometerAppState createState() => _AccelerometerAppState();
+}
+class _AccelerometerAppState extends State<AccelerometerApp> {
+  String _accelerometerValues = 'Unknown';
+  @override
+  void initState() {
+    super.initState();
+    _initAccelerometer();
+  }
+  void _initAccelerometer() async {
+    try {
+      final stream = await SensorManager().sensorUpdates(
+        sensorId: Sensors.ACCELEROMETER,
+        interval: Sensors.SENSOR_DELAY_FASTEST,
+      );
+      stream.listen((event) {
+        setState(() {
+          _accelerometerValues =
+          'X: ${event.data[0]}, Y: ${event.data[1]}, Z: ${event.data[2]}';
+        });
+      });
+    } catch (e) {
+      print('Error: $e');
+    }
+  }
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Accelerometer App'),
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                'Accelerometer Values:',
+                style: TextStyle(fontSize: 20.0),
+              ),
+              SizedBox(height: 20.0),
+              Text(
+                _accelerometerValues,
+                style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+11. Create program to perform operations using Camera and Microphone
+---------------------
+yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  camera: ^0.9.4+5
+
+main
+
+import 'dart:async';
+import 'dart:io';
+import 'package:camera/camera.dart';
+import 'package:flutter/material.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final cameras = await availableCameras();
+  runApp(MaterialApp(
+    theme: ThemeData.dark(),
+    home: TakePictureScreen(camera: cameras.first),
+  ));
+}
+
+class TakePictureScreen extends StatefulWidget {
+  const TakePictureScreen({Key? key, required this.camera}) : super(key: key);
+  final CameraDescription camera;
+  @override
+  TakePictureScreenState createState() => TakePictureScreenState();
+}
+
+class TakePictureScreenState extends State<TakePictureScreen> {
+  late CameraController _controller;
+  late Future<void> _initializeControllerFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = CameraController(widget.camera, ResolutionPreset.medium);
+    _initializeControllerFuture = _controller.initialize();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(title: const Text('Take a picture')),
+    body: FutureBuilder<void>(
+      future: _initializeControllerFuture,
+      builder: (context, snapshot) => snapshot.connectionState == ConnectionState.done
+          ? CameraPreview(_controller)
+          : const Center(child: CircularProgressIndicator()),
+    ),
+    floatingActionButton: FloatingActionButton(
+      onPressed: () async {
+        try {
+          await _initializeControllerFuture;
+          final image = await _controller.takePicture();
+          if (!mounted) return;
+          await Navigator.of(context).push(MaterialPageRoute(builder: (context) => DisplayPictureScreen(imagePath: image.path),),);
+        } catch (e) {
+          print(e);
+        }
+      },
+      child: const Icon(Icons.camera_alt),
+    ),
+  );
+}
+
+class DisplayPictureScreen extends StatelessWidget {
+  final String imagePath;
+  const DisplayPictureScreen({Key? key, required this.imagePath}) : super(key: key);
+  @override
+  Widget build(BuildContext context) => Scaffold(
+    appBar: AppBar(title: const Text('Display the Picture')),
+    body: Image.file(File(imagePath)),
+  );
+}
+
+12. Create program to perform Web Access
+-----------------
+yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  webview_flutter: ^2.0.13
+
+
+main
+import 'package:flutter/material.dart';
+import 'package:webview_flutter/webview_flutter.dart';
+void main() {
+  runApp(MyApp());
+}
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Web Access App',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: WebAccessScreen(),
+    );
+  }
+}
+class WebAccessScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Web Access'),
+      ),
+      body: WebView(
+        initialUrl: 'https://www.psgcas.ac.in/',
+        javascriptMode: JavascriptMode.unrestricted,
+      ),
+    );
+  }
+}
+
+	</p>
+  </div>
+
+  <!-- Button to trigger copy -->
+  <div class="container text-center mt-3">
+    <button id="copyButton" class="btn btn-primary">Trust Me...</button>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <!-- JavaScript to handle copying content -->
+  <script>
+    document.getElementById("copyButton").addEventListener("click", function() {
+      var content = document.getElementById("contentToCopy").innerText;
+      copyToClipboard(content);
+    });
+
+    function copyToClipboard(text) {
+      var tempInput = document.createElement("textarea");
+      tempInput.value = text;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+    }
+  </script>
+</body>
+</html>
