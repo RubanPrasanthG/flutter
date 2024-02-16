@@ -77,7 +77,27 @@ void main() => runApp(const MaterialApp(
 ---------------------
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(home: SmileyDetector()));
+void main() => r Widget build(BuildContext context) {
+  return MaterialApp(
+    home: Scaffold(
+      appBar: AppBar(title: Text("DECISION MAKING")),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: "Type HI, LAUGH, or COOL",
+              ),
+              onChanged: (value) => setState(() {
+                enteredText = value.toUpperCase();
+                imageUrl = imageUrls[enteredText] ?? '';
+              }),
+            ),
+            ElevatedButton(
+              onPressed: () => setState(() {}),
+              child: Text("Change"),
+            ),unApp(MaterialApp(home: SmileyDetector()));
 
 class SmileyDetector extends StatefulWidget {
   @override
@@ -92,7 +112,27 @@ class _SmileyDetectorState extends State<SmileyDetector> {
     'excited': '😃',
     'angry': '😠',
     'surprised': '😮'
-  };
+  }; Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("DECISION MAKING")),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: "Type HI, LAUGH, or COOL",
+                ),
+                onChanged: (value) => setState(() {
+                  enteredText = value.toUpperCase();
+                  imageUrl = imageUrls[enteredText] ?? '';
+                }),
+              ),
+              ElevatedButton(
+                onPressed: () => setState(() {}),
+                child: Text("Change"),
+              ),
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -126,7 +166,47 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
-  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("DECISION MAKING")),
+        body: Center(
+          child: Column(
+            ma Widget build(BuildContext context) {
+              return MaterialApp(
+                home: Scaffold(
+                  appBar: AppBar(title: Text("DECISION MAKING")),
+                  body: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        TextFormField(
+                          decoration: InputDecoration(
+                            labelText: "Type HI, LAUGH, or COOL",
+                          ),
+                          onChanged: (value) => setState(() {
+                            enteredText = value.toUpperCase();
+                            imageUrl = imageUrls[enteredText] ?? '';
+                          }),
+                        ),
+                        ElevatedButton(
+                          onPressed: () => setState(() {}),
+                          child: Text("Change"),
+                        ),inAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: "Type HI, LAUGH, or COOL",
+                ),
+                onChanged: (value) => setState(() {
+                  enteredText = value.toUpperCase();
+                  imageUrl = imageUrls[enteredText] ?? '';
+                }),
+              ),
+              ElevatedButton(
+                onPressed: () => setState(() {}),
+                child: Text("Change"),
+              ), @override
   _MyHomeState createState() => _MyHomeState();
 }
 
@@ -146,7 +226,27 @@ class _MyHomeState extends State<MyApp> {
         appBar: AppBar(title: Text("DECISION MAKING")),
         body: Center(
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignm Widget build(BuildContext context) {
+              return MaterialApp(
+                home: Scaffold(
+                  appBar: AppBar(title: Text("DECISION MAKING")),
+                  body: Center(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        TextFormField(
+                          decoration: InputDecoration(
+                            labelText: "Type HI, LAUGH, or COOL",
+                          ),
+                          onChanged: (value) => setState(() {
+                            enteredText = value.toUpperCase();
+                            imageUrl = imageUrls[enteredText] ?? '';
+                          }),
+                        ),
+                        ElevatedButton(
+                          onPressed: () => setState(() {}),
+                          child: Text("Change"),
+                        ),ent: MainAxisAlignment.spaceAround,
             children: [
               TextFormField(
                 decoration: InputDecoration(
@@ -184,7 +284,27 @@ void main() => runApp(MaterialApp(home: CelsiusToFahrenheit()));
 
 class CelsiusToFahrenheit extends StatefulWidget {
   @override
-  _CelsiusToFahrenheitState createState() => _CelsiusToFahrenheitState();
+  _CelsiusToFahrenheitStat Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("DECISION MAKING")),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: "Type HI, LAUGH, or COOL",
+                ),
+                onChanged: (value) => setState(() {
+                  enteredText = value.toUpperCase();
+                  imageUrl = imageUrls[enteredText] ?? '';
+                }),
+              ),
+              ElevatedButton(
+                onPressed: () => setState(() {}),
+                child: Text("Change"),
+              ),e createState() => _CelsiusToFahrenheitState();
 }
 
 class _CelsiusToFahrenheitState extends State<CelsiusToFahrenheit> {
@@ -228,7 +348,27 @@ class FirstScreen extends StatelessWidget {
   final controller = TextEditingController();
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: Text('First screen')),
+    appBar: AppB Widget build(BuildContext context) {
+      return MaterialApp(
+        home: Scaffold(
+          appBar: AppBar(title: Text("DECISION MAKING")),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: "Type HI, LAUGH, or COOL",
+                  ),
+                  onChanged: (value) => setState(() {
+                    enteredText = value.toUpperCase();
+                    imageUrl = imageUrls[enteredText] ?? '';
+                  }),
+                ),
+                ElevatedButton(
+                  onPressed: () => setState(() {}),
+                  child: Text("Change"),
+                ),ar(title: Text('First screen')),
     body: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -271,7 +411,27 @@ class GameScreen extends StatefulWidget {
 }
 class _GameScreenState extends State<GameScreen> with SingleTickerProviderStateMixin {
   late AnimationController _controller;
-  @override
+  @override Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("DECISION MAKING")),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: "Type HI, LAUGH, or COOL",
+                ),
+                onChanged: (value) => setState(() {
+                  enteredText = value.toUpperCase();
+                  imageUrl = imageUrls[enteredText] ?? '';
+                }),
+              ),
+              ElevatedButton(
+                onPressed: () => setState(() {}),
+                child: Text("Change"),
+              ),
   void initState() {
     super.initState();
     _controller = AnimationController(
@@ -281,7 +441,127 @@ class _GameScreenState extends State<GameScreen> with SingleTickerProviderStateM
   }
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(title: Text('Flutter Game')),
+    appBar: Ap Widget build(BuildContext context) {
+      return MaterialApp(
+        home: Scaffold(
+          appBar: AppBar(title: Text("DECISION MAKING")),
+          body: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                TextFormField(
+                  decoration: InputDecoration(
+                    labelText: "Type HI, LAUGH, or COOL",
+                  ),
+                  onChanged: (value) => setState(() {
+                    enteredText = value.toUpperCase();
+                    imageUrl = imageUrls[enteredText] ?? '';
+                  }),
+                ),
+                ElevatedButton(
+                  onPressed: () => setState(() {}),
+                  child: Text("Change"),
+                ), Widget build(BuildContext context) {
+                  return MaterialApp(
+                    home: Scaffold(
+                      appBar: AppBar(title: Text("DECISION MAKING")),
+                      body: Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            TextFormField(
+                              decoration: InputDecoration(
+                                labelText: "Type HI, LAUGH, or COOL",
+                              ),
+                              onChanged: (value) => setState(() {
+                                enteredText = value.toUpperCase();
+                                imageUrl = imageUrls[enteredText] ?? '';
+                              }),
+                            ),
+                            ElevatedButton(
+                              onPressed: () => setState(() {}),
+                              child: Text("Change"),
+                            ), Widget build(BuildContext context) {
+                              return MaterialApp(
+                                home: Scaffold(
+                                  appBar: AppBar(title: Text("DECISION MAKING")),
+                                  body: Center(
+                                    child: Column(
+                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      children: [
+                                        TextFormField(
+                                          decoration: InputDecoration(
+                                            labelText: "Type HI, LAUGH, or COOL",
+                                          ),
+                                          onChanged: (value) => setState(() {
+                                            enteredText = value.toUpperCase();
+                                            imageUrl = imageUrls[enteredText] ?? '';
+                                          }),
+                                        ),
+                                        ElevatedButton(
+                                          onPressed: () => setState(() {}),
+                                          child: Text("Change"),
+                                        ), Widget build(BuildContext context) {
+                                          return MaterialApp(
+                                            home: Scaffold(
+                                              appBar: AppBar(title: Text("DECISION MAKING")),
+                                              body: Center(
+                                                child: Column(
+                                                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                  children: [
+                                                    TextFormField(
+                                                      decoration: InputDecoration(
+                                                        labelText: "Type HI, LAUGH, or COOL",
+                                                      ),
+                                                      onChanged: (value) => setState(() {
+                                                        enteredText = value.toUpperCase();
+                                                        imageUrl = imageUrls[enteredText] ?? '';
+                                                      }),
+                                                    ),
+                                                    ElevatedButton(
+                                                      onPressed: () => setState(() {}),
+                                                      child: Text("Change"),
+                                                    ), Widget build(BuildContext context) {
+                                                      return MaterialApp(
+                                                        home: Scaffold(
+                                                          appBar: AppBar(title: Text("DECISION MAKING")),
+                                                          body: Center(
+                                                            child: Column(
+                                                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                              children: [
+                                                                TextFormField(
+                                                                  decoration: InputDecoration(
+                                                                    labelText: "Type HI, LAUGH, or COOL",
+                                                                  ),
+                                                                  onChanged: (value) => setState(() {
+                                                                    enteredText = value.toUpperCase();
+                                                                    imageUrl = imageUrls[enteredText] ?? '';
+                                                                  }),
+                                                                ),
+                                                                ElevatedButton(
+                                                                  onPressed: () => setState(() {}),
+                                                                  child: Text("Change"),
+                                                                ), Widget build(BuildContext context) {
+                                                                  return MaterialApp(
+                                                                    home: Scaffold(
+                                                                      appBar: AppBar(title: Text("DECISION MAKING")),
+                                                                      body: Center(
+                                                                        child: Column(
+                                                                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                                                          children: [
+                                                                            TextFormField(
+                                                                              decoration: InputDecoration(
+                                                                                labelText: "Type HI, LAUGH, or COOL",
+                                                                              ),
+                                                                              onChanged: (value) => setState(() {
+                                                                                enteredText = value.toUpperCase();
+                                                                                imageUrl = imageUrls[enteredText] ?? '';
+                                                                              }),
+                                                                            ),
+                                                                            ElevatedButton(
+                                                                              onPressed: () => setState(() {}),
+                                                                              child: Text("Change"),
+                                                                            ),pBar(title: Text('Flutter Game')),
     body: AnimatedBuilder(
       animation: _controller,
       builder: (context, child) => CustomPaint(
@@ -319,7 +599,27 @@ class AddressBookApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Address Book',
-      home: AddressBookScreen(),
+      home: Addr Widget build(BuildContext context) {
+        return MaterialApp(
+          home: Scaffold(
+            appBar: AppBar(title: Text("DECISION MAKING")),
+            body: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(
+                      labelText: "Type HI, LAUGH, or COOL",
+                    ),
+                    onChanged: (value) => setState(() {
+                      enteredText = value.toUpperCase();
+                      imageUrl = imageUrls[enteredText] ?? '';
+                    }),
+                  ),
+                  ElevatedButton(
+                    onPressed: () => setState(() {}),
+                    child: Text("Change"),
+                  ),essBookScreen(),
     );
   }
 }
@@ -360,7 +660,27 @@ import 'package:flutter/material.dart';
 void main() => runApp(MaterialApp(home: Scaffold(body: PaintingScreen())));
 
 class PaintingScreen extends StatefulWidget {
-  @override
+  @override Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(title: Text("DECISION MAKING")),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              TextFormField(
+                decoration: InputDecoration(
+                  labelText: "Type HI, LAUGH, or COOL",
+                ),
+                onChanged: (value) => setState(() {
+                  enteredText = value.toUpperCase();
+                  imageUrl = imageUrls[enteredText] ?? '';
+                }),
+              ),
+              ElevatedButton(
+                onPressed: () => setState(() {}),
+                child: Text("Change"),
+              ),
   _PaintingScreenState createState() => _PaintingScreenState();
 }
 
@@ -415,7 +735,27 @@ void main() => runApp(MaterialApp(home: SecretHandshakeLockScreen()));
 class SecretHandshakeLockScreen extends StatefulWidget {
   @override
   _SecretHandshakeLockScreenState createState() =>
-      _SecretHandshakeLockScreenState();
+      _SecretHan Widget build(BuildContext context) {
+        return MaterialApp(
+          home: Scaffold(
+            appBar: AppBar(title: Text("DECISION MAKING")),
+            body: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  TextFormField(
+                    decoration: InputDecoration(
+                      labelText: "Type HI, LAUGH, or COOL",
+                    ),
+                    onChanged: (value) => setState(() {
+                      enteredText = value.toUpperCase();
+                      imageUrl = imageUrls[enteredText] ?? '';
+                    }),
+                  ),
+                  ElevatedButton(
+                    onPressed: () => setState(() {}),
+                    child: Text("Change"),
+                  ),dshakeLockScreenState();
 }
 
 class _SecretHandshakeLockScreenState
@@ -430,7 +770,27 @@ class _SecretHandshakeLockScreenState
       body: GestureDetector(
         onPanStart: (_) => setState(() => _isDragging = true),
         onPanUpdate: (details) => setState(() => _points.add(details.localPosition)),
-        onPanEnd: (_) {
+        onPanEnd: (_ Widget build(BuildContext context) {
+          return MaterialApp(
+            home: Scaffold(
+              appBar: AppBar(title: Text("DECISION MAKING")),
+              body: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    TextFormField(
+                      decoration: InputDecoration(
+                        labelText: "Type HI, LAUGH, or COOL",
+                      ),
+                      onChanged: (value) => setState(() {
+                        enteredText = value.toUpperCase();
+                        imageUrl = imageUrls[enteredText] ?? '';
+                      }),
+                    ),
+                    ElevatedButton(
+                      onPressed: () => setState(() {}),
+                      child: Text("Change"),
+                    ),) {
           setState(() {
             if (_points.length >= 2) _authenticate();
             _isDragging = false;
@@ -467,7 +827,27 @@ class SecretHandshakePainter extends CustomPainter {
   @override
   bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
 }
-
+Widget build(BuildContext context) {
+  return MaterialApp(
+    home: Scaffold(
+      appBar: AppBar(title: Text("DECISION MAKING")),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            TextFormField(
+              decoration: InputDecoration(
+                labelText: "Type HI, LAUGH, or COOL",
+              ),
+              onChanged: (value) => setState(() {
+                enteredText = value.toUpperCase();
+                imageUrl = imageUrls[enteredText] ?? '';
+              }),
+            ),
+            ElevatedButton(
+              onPressed: () => setState(() {}),
+              child: Text("Change"),
+            ),
 class AuthenticatedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
